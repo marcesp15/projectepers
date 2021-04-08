@@ -5,7 +5,7 @@
 @section('content')
 
     <h1>Esta es la pagina para editar institutos</h1>
-    
+    <a href="{{route('institutos.index')}}">Atras</a>
     <form action="{{route('institutos.update', $instituto)}}" method="POST">
 
         @csrf
