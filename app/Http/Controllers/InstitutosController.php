@@ -8,7 +8,7 @@ use App\Http\Requests\StoreInstituto;
 
 class InstitutosController extends Controller
 {
-    public function index() {
+    public function index () {
 
         $institutos = Instituto::orderBy('id', 'desc')->paginate(10);
 
@@ -16,13 +16,13 @@ class InstitutosController extends Controller
 
     }
 
-    public function crear() {
+    public function create () {
 
         return view('institutos.create');
 
     }
 
-    public function store(StoreInstituto $request) {
+    public function store (StoreInstituto $request) {
 
 /*         $instituto = new Instituto();
 
@@ -40,7 +40,7 @@ class InstitutosController extends Controller
 
     }
 
-    public function show($id) {
+    public function show ($id) {
 
         $instituto = Instituto::find($id);
 
@@ -48,13 +48,13 @@ class InstitutosController extends Controller
 
     }
 
-    public function editar(Instituto $instituto) {
+    public function edit (Instituto $instituto) {
 
         return view('institutos.edit', compact('instituto'));
 
     }
 
-    public function actualizar(StoreInstituto $request, Instituto $instituto) {
+    public function update (StoreInstituto $request, Instituto $instituto) {
 
 /*         $instituto->nombre = $request->nombre;
         $instituto->municipio = $request->municipio;

@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-/* use App\Models\Instituto; */
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,9 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
 
         $this->call(InstitutoSeeder::class);
+        $this->call(PropuestasSeeder::class);
 
     }
 }

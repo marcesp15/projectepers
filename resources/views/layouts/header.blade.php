@@ -10,16 +10,16 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="#">Inicio</a>
+          <a class="navbar-brand" href="{{route('management')}}">Inicio</a>
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
               <a class="nav-link" href="{{route('institutos.index')}}">Institutos <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">Professores</a>
+              <a class="nav-link" href="#">Empresas</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">Alumnos</a>
+              <a class="nav-link" href="{{route('propuestas.index')}}">Propuestas</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">

@@ -11,9 +11,9 @@
     <a href="{{route('institutos.index')}}">Institutos</a>
     <br>
     <br>
-    <a href="">Profesores</a>
+    <a href="">Empresas</a>
     <br>
     <br>
-    <a href="">Alumnos</a>
+    <a href="{{route('propuestas.index')}}">Propuestas</a>
 </body>
 </html>
