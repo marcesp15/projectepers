@@ -18,8 +18,14 @@ class CreatePropuestasTable extends Migration
             $table->string('titulo');
             $table->string('categoria');
             $table->string('descripcion');
-            $table->enum('estado',['activo','inactivo',''])->default('activo');
+            $table->unsignedBigInteger('instituto_id')->nullable();
+            $table->enum('estado',['activo','inactivo'])->default('activo');
             $table->timestamps();
+
+            $table->foreign('instituto_id')
+                    ->references('id')
+                    ->on('institutos')
+                    ->onDelete('set null');
         });
     }
 

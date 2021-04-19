@@ -7,11 +7,26 @@
 
 <div class="container bg-dark">
 
-    <div class="row justify-content-center bg-dark text-white">
+    <div class="row justify-content-center bg-dark text-light">
 
     <h1 class="">Propuestas</h1>
 
     </div>
+
+    <div class="bg-light text-dark">
+        <ul>
+            @foreach ($propuestas as $propuesta)
+                @if ($propuesta->estado === 'activo')
+                    <li>
+                        <a href="{{route('propuestas.show', $propuesta->id)}}">{{$propuesta->titulo}}</a>  
+                    </li>
+                @endif
+            @endforeach
+        </ul>
+    </div>
+        
+        
+
 
     <div class="row justify-content-between bg-info">
 
@@ -23,44 +38,9 @@
 
 
     <div class="row">
-        <table class="table table-bordered table-hover">
-
-            <thead class="thead-dark">
-
-                <tr>
-                    <th><strong>Titulo</strong></th>
-                    <th><strong>Categoria</strong></th>
-                    <th><strong>Descripcion</strong></th>
-                    <th>Modificar</th>
-                    <th>Eliminar</th>
-                </tr>
-
-            </thead>
-    
 
 
-            @foreach ($propuestas as $propuesta)
-                @if ($propuesta->estado === 'activo')
-                    
-                    <tr class="table-info">
-                        <td>{{$propuesta->titulo}}</td>
-                        <td>{{$propuesta->categoria}}</td>
-                        <td>{{$propuesta->descripcion}}</td>
-                        <td><a href="{{route('propuestas.edit', $propuesta->id)}}"><button><i class="far fa-edit"></i></button></a></td>
-                        
-                        <form action="{{route('propuestas.destroy', $propuesta)}}" method="POST">
-                            @csrf
-                            @method('delete')
-                        <td><a href=><button><i class="far fa-trash-alt"></i></button></a></td>
-                        </form>
-                        
-                    </tr>
 
-                @endif
-                
-            @endforeach
-
-        </table>
     </div>
 
     <div class="row justify-content-center">
@@ -80,26 +60,41 @@
 
 
 
-{{-- @extends('layouts.plantilla')
+{{-- <table class="table table-bordered table-hover">
 
-@section('title', 'Institutos')
-    
-@section('content')
+    <thead class="thead-dark">
 
-    <h1>Esta es la pagina index de los institutos</h1>
+        <tr>
+            <th><strong>Titulo</strong></th>
+            <th><strong>Categoria</strong></th>
+            <th><strong>Descripcion</strong></th>
+            <th>Modificar</th>
+            <th>Eliminar</th>
+        </tr>
 
-    <a href="{{route('institutos.create')}}">Crear Instituto</a>
-    <br>
-    <a href="{{route('management')}}">Atras</a>
+    </thead>
 
-    <ul>
-        @foreach ($institutos as $instituto)
-            <li>
-                <a href="{{route('institutos.show', $instituto->id)}}">{{$instituto->nombre}}</a>
-            </li>
-        @endforeach
-    </ul>
 
-    {{$institutos->links()}}
 
-@endsection --}}
+    @foreach ($propuestas as $propuesta)
+        @if ($propuesta->estado === 'activo')
+            
+            <tr class="table-info">
+                <td>{{$propuesta->titulo}}</td>
+                <td>{{$propuesta->categoria}}</td>
+                <td>{{$propuesta->descripcion}}</td>
+                <td><a href="{{route('propuestas.edit', $propuesta->id)}}"><button><i class="far fa-edit"></i></button></a></td>
+                
+                <form action="{{route('propuestas.destroy', $propuesta)}}" method="POST">
+                    @csrf
+                    @method('delete')
+                <td><a href=><button><i class="far fa-trash-alt"></i></button></a></td>
+                </form>
+                
+            </tr>
+
+        @endif
+        
+    @endforeach
+
+</table> --}}

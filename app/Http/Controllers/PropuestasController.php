@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Propuestas;
 use App\Http\Requests\StorePropuesta;
+use App\Models\Instituto;
 
 class PropuestasController extends Controller
 {
@@ -32,9 +33,11 @@ class PropuestasController extends Controller
     }
     public function show ($id) {
 
-        $propuesta = Propuestas::find($id);
+        $propuestas = Propuestas::find($id);
 
-        return view('propuestas.show', compact('propuesta'));
+        $institutos = Instituto::find($id);
+
+        return view('propuestas.show', compact('propuestas', 'institutos'));
 
     }
 

@@ -24,7 +24,7 @@ class InstitutoFactory extends Factory
         return [
             'nombre' => $this->faker->sentence(),
             'municipio' => $this->faker->sentence(),
-            'direccion' => $this->faker->paragraph(),
+            'direccion' => $this->faker->sentence(),
             'correo' => $this->faker->sentence(),
             'telefono' => $this->faker->randomElement([977701234, 977704312, 977706543, 977709876])
         ];

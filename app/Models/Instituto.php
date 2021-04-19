@@ -14,4 +14,13 @@ class Instituto extends Model
     
     // En guarded tenemos que poner los campos que ¡NO! queremos que se guarden
     /* protected $guarded = ['status']; */
+
+    // Relacion uno a muchos
+
+    public function propuestas() {
+
+        return $this->hasMany('App\Models\Propuestas');
+
+    }
+
 }
